@@ -2165,6 +2165,8 @@ function Counter() {
       description: 'prueba',
       price: '111',
       availability: '1'
+    }).then(function (response) {
+      console.log(response);
     });
   };
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("button", {

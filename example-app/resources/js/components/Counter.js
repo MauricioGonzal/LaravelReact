@@ -31,8 +31,11 @@ export default function Counter() {
           description: 'prueba',
           price: '111',
           availability: '1',
+      }).then(function(response){
+        console.log(response);
       })
   }
+
   return (
     <div>
         <button onClick={handleDecrement}>-</button>
