@@ -4,33 +4,32 @@ import axios from "axios";
 import React, { useState } from "react";
 import { createRoot } from 'react-dom/client';
 import ReactDOM from 'react-dom';
+import { useRef } from 'react';
 
 export default function Counter() {
   // Set the initial count state to zero, 0
   const [count, setCount] = useState(0);
-
   // Create handleIncrement event handler
   const handleIncrement = () => {
     setCount(prevCount => prevCount + 1);
-        notifyServer();
 
   };
 
   // Create handleDecrement event handler
   const handleDecrement = () => {
     setCount(prevCount => prevCount - 1);
-    notifyServer();
   };
 
     // Notifies the server about the change
-  const notifyServer = () => {
-      axios.post('api/products', {
-          created_at: '11',
-          updated_at: '11',
-          title: 'probando',
-          description: 'prueba',
-          price: '111',
-          availability: '1',
+  const crearUsuario = () => {
+      axios.post('api/users', {
+          name: '11',
+          email: document.getElementById('correo').value,
+          email_verified_at: '122',
+          password: document.getElementById('palabraSecreta').value,
+          remember_token: '111',
+          created_at: '1',
+          updated_at:12
       }).then(function(response){
         console.log(response);
       })
@@ -38,9 +37,9 @@ export default function Counter() {
 
   return (
     <div>
-        <button onClick={handleDecrement}>-</button>
-        <span> {count} </span>
-        <button onClick={handleIncrement}>+</button>
+        <button onClick={crearUsuario} class="btn btn-primary mb-2">
+            Crear Usuario
+        </button>
     </div>
   );
 }
